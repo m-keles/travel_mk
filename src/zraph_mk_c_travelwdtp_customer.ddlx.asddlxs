@@ -1,0 +1,13 @@
+@Metadata.layer: #CUSTOMER
+
+annotate entity ZRAPH_MK_C_TravelWDTP with
+{
+  @UI: { lineItem:       [ { position: 10, importance: #HIGH, label: 'Travel Identifier' },
+                           { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept' },
+                         { type: #FOR_ACTION, dataAction: 'rejectTravel', label: 'Reject' } ],
+         identification: [ { position: 10, label: 'Travel Identifier' },
+                           { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept' },
+                           { type: #FOR_ACTION, dataAction: 'rejectTravel', label: 'Reject' } ],
+         selectionField: [ { position: 10 } ] }
+  TravelID;
+}

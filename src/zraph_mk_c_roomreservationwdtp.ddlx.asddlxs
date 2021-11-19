@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName:       'Room Reservation',
+                     typeNamePlural: 'Room Reservations',
+                     title:          { type: #STANDARD,
+                                       label: 'Room Reservation',
+                                       value: 'RoomRsvID' } } }
+
+annotate entity ZRAPH_MK_C_RoomReservationWDTP with
+{
+
+  @UI.facet: [ { id:            'RoomReservation',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Room Reservation',
+                 position:      10 } ]
+
+  @UI.hidden: true
+  RoomRsvUUID;
+
+  @UI.hidden: true
+  TravelUUID;
+
+  @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
+         identification: [ { position: 10 } ] }
+  RoomRsvID;
+
+  @UI: { lineItem:       [ { position: 20, importance: #HIGH } ],
+         identification: [ { position: 20 } ] }
+  HotelID;
+  
+  @UI: { lineItem:       [ { position: 30, importance: #HIGH } ],
+         identification: [ { position: 30 } ] }
+  City;
+
+  @UI: { lineItem:       [ { position: 40, importance: #HIGH } ],
+         identification: [ { position: 40 } ] }
+  BeginDate;
+
+  @UI: { lineItem:       [ { position: 50, importance: #HIGH } ],
+         identification: [ { position: 50 } ] }
+  EndDate;
+
+  @UI: { lineItem:       [ { position: 60, importance: #HIGH } ],
+         identification: [ { position: 60 } ] }
+  RoomType;
+
+  @UI: { lineItem:       [ { position: 70, importance: #HIGH } ],
+         identification: [ { position: 70 } ] }
+  RoomRsvPrice;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

@@ -1,0 +1,42 @@
+projection;
+//strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
+use draft;
+
+define behavior for ZRAPH_MK_C_TravelWDTP alias Travel
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Booking { create; with draft; }
+  use association _RoomReservation { create; with draft; }
+}
+
+define behavior for ZRAPH_MK_C_BookingWDTP alias Booking
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+  use association _BookingSupplement { create; with draft; }
+}
+
+define behavior for ZRAPH_MK_C_BookingSupplWDTP alias BookingSupplement
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+}
+
+define behavior for ZRAPH_MK_C_RoomReservationWDTP alias RoomReservation
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+}
