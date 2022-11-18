@@ -1,2 +1,2 @@
 # travel_mk
-Travel_mk
+Fiori-Projekt im Praktikum
